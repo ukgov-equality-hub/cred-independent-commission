@@ -1,0 +1,6 @@
+---
+applications:
+- name: cred
+  memory: 64M
+  buildpacks:
+  - staticfile_buildpack

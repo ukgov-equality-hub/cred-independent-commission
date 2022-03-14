@@ -2,5 +2,37 @@
 applications:
 - name: cred
   memory: 64M
+  instances: 2
   buildpacks:
   - staticfile_buildpack
+
+- name: cred-prometheus-exporter
+  instances: 1
+  path: ./paas-prometheus-exporter
+  memory: 256M
+  routes:
+  - route: cred-prometheus-exporter.apps.internal
+  buildpacks:
+  - go_buildpack
+
+- name: cred-prometheus
+  path: ./prometheus-2.29.2.linux-amd64
+  instances: 1
+  memory: 512M
+  routes:
+  - route: cred-prometheus.apps.internal
+  buildpacks:
+  - binary_buildpack
+  command: ./prometheus --config.file=prometheus-prod.yml --web.listen-address=:8080 --web.enable-admin-api
+
+- name: cred-grafana
+  path: ./cf-grafana-buildpack
+  memory: 512M
+  instances: 1
+  random-route: true
+  env:
+    DATA_SOURCE_URL: "http://cred-prometheus.apps.internal:8080"
+  buildpacks:
+  - https://github.com/SpringerPE/cf-grafana-buildpack.git
+
+

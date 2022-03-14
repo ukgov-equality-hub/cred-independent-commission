@@ -1,0 +1,25 @@
+notifiers:
+  - name: notification-channel
+    type: email
+    uid: notifier1
+    # either
+    #org_id: 2
+    # or
+    org_name: Main Org.
+    is_default: true
+    send_reminder: true
+    frequency: 1h
+    disable_resolve_message: false
+    # See `Supported Settings` section for settings supported for each
+    # alert notification type.
+    settings:
+      #singleEmail: true
+      addresses: 'grafanatest2000@gmail.com'
+#      recipient: 'grafanatest2000@gmail.com'
+#      uploadImage: true
+#      token: 'xoxb' # legacy setting since Grafana v7.2 (stored non-encrypted)
+#      url: https://slack.com # legacy setting since Grafana v7.2 (stored non-encrypted)
+#    # Secure settings that will be encrypted in the database (supported since Grafana v7.2). See `Supported Settings` section for secure settings supported for each notifier.
+#    secure_settings:
+#      token: 'xoxb'
+#      url: https://slack.com

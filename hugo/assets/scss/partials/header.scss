@@ -4,4 +4,25 @@
     &__container {
         border-bottom: none;
     }
+
+    .govuk-width-flex {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .govuk-header__navigation-item {
+        border: none;
+        
+        &.active {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 0.1em;
+        }
+    }
+
+    .govuk-header__navigation-mobile  {
+        ul {
+            display: flex;
+        }
+    }
 }

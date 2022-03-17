@@ -2,13 +2,15 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=stylesheet href=/scss/index.f19d54dc638846e4d0176bbcb0786a2c11ece73a68da97b60af998b6c0dd77da.css integrity="sha256-8Z1U3GOIRuTQF2u8sHhqLBHs5zpo2pe2CvmYtsDdd9o=" crossorigin=anonymous><title>FAQS - Hugo Tutorial Getting Started</title>
+<link rel=stylesheet href=/scss/index.b0b64f574a65a68d8530a272c3c8ed702118dd0c2458287569f46b271e34a5a7.css integrity="sha256-sLZPV0plpo2FMKJyw8jtcCEY3QwkWCh1afRrJx40pac=" crossorigin=anonymous><title>FAQS - Hugo Tutorial Getting Started</title>
 </head>
 <body>
 <header class="govuk-header govuk-background-primary govuk-!-padding-top-2 govuk-!-padding-bottom-2" role=banner data-module=govuk-header>
 <div class="govuk-header__container govuk-width-container">
+<div class=govuk-grid-row>
+<div class=govuk-width-flex>
 <div class=govuk-header__logo>
-<a href=# class="govuk-header__link govuk-header__link--homepage">
+<a href class="govuk-header__link govuk-header__link--homepage">
 <span class=govuk-header__logotype>
 <picture>
 <img width=164 height=68 src=/images/govuk-cred-logo-white.svg class="attachment-full size-full" alt="Go to the cred.gov.uk homepage" loading=lazy data-eio=p>
@@ -16,15 +18,46 @@
 </span>
 </a>
 </div>
-<div class=navbar-menu>
-<div class=navbar-start>
-</div>
-</div>
-<a role=button class=navbar-burger aria-label=menu aria-expanded=false>
-<span aria-hidden=true></span>
-<span aria-hidden=true></span>
-<span aria-hidden=true></span>
+<nav aria-label=Menu class="govuk-header__navigation nav d-none d-lg-block">
+<ul id=navigation class=govuk-header__navigation-list>
+<li class="govuk-header__navigation-item active">
+<a class="nav-link navbar-item govuk-header__link" href=/faqs/>
+<span>FAQS</span>
 </a>
+</li>
+<li class=govuk-header__navigation-item>
+<a class="nav-link navbar-item govuk-header__link" href=/publications/>
+<span>Publications</span>
+</a>
+</li>
+<li class=govuk-header__navigation-item>
+<a class="nav-link navbar-item govuk-header__link" href=/recommendations/>
+<span>Recommendations</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<nav aria-label=Menu class="govuk-header__navigation govuk-header__navigation-mobile nav d-block d-lg-none">
+<ul id=navigation class=govuk-header__navigation-list>
+<li class="govuk-header__navigation-item active">
+<a class="nav-link navbar-item govuk-header__link" href=/faqs/>
+<span>FAQS</span>
+</a>
+</li>
+<li class=govuk-header__navigation-item>
+<a class="nav-link navbar-item govuk-header__link" href=/publications/>
+<span>Publications</span>
+</a>
+</li>
+<li class=govuk-header__navigation-item>
+<a class="nav-link navbar-item govuk-header__link" href=/recommendations/>
+<span>Recommendations</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
 </div>
 </header>
 <div class="govuk-background-senary govuk-hero-small govuk-!-padding-top-8 govuk-!-padding-bottom-8">
@@ -64,93 +97,63 @@
 </p>
 </div>
 </div>
-<div class=accordion id=accordionExample>
-<div class=accordion-item>
-<h2 class=accordion-header id=headingOne>
-<button class=accordion-button type=button data-bs-toggle=collapse data-bs-target=#collapseOne aria-expanded=true aria-controls=collapseOne>
-Accordion Item #1
-</button>
-</h2>
-<div id=collapseOne class="accordion-collapse collapse show" aria-labelledby=headingOne data-bs-parent=#accordionExample>
-<div class=accordion-body>
-<strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-</div>
-</div>
-</div>
-<div class=accordion-item>
-<h2 class=accordion-header id=headingTwo>
-<button class="accordion-button collapsed" type=button data-bs-toggle=collapse data-bs-target=#collapseTwo aria-expanded=false aria-controls=collapseTwo>
-Accordion Item #2
-</button>
-</h2>
-<div id=collapseTwo class="accordion-collapse collapse" aria-labelledby=headingTwo data-bs-parent=#accordionExample>
-<div class=accordion-body>
-<strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-</div>
-</div>
-</div>
-<div class=accordion-item>
-<h2 class=accordion-header id=headingThree>
-<button class="accordion-button collapsed" type=button data-bs-toggle=collapse data-bs-target=#collapseThree aria-expanded=false aria-controls=collapseThree>
-Accordion Item #3
-</button>
-</h2>
-<div id=collapseThree class="accordion-collapse collapse" aria-labelledby=headingThree data-bs-parent=#accordionExample>
-<div class=accordion-body>
-<strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-</div>
-</div>
-</div>
-</div>
 <div class=govuk-grid-row>
 <div class=govuk-grid-column-full>
-<div class=govuk-accordion data-module=govuk-accordion id=accordion-default>
-<div class=govuk-accordion__section>
-<div class=govuk-accordion__section-header>
+<div class="govuk-accordion accordion" data-module=govuk-accordion id=accordion-default>
+<div class="govuk-accordion__section accordion-item">
+<div class="govuk-accordion__section-header accordion-header" id=accordion-default-heading-1>
 <h2 class=govuk-accordion__section-heading>
-<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id=accordion-default-heading-1>
+<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id=accordion-default-heading-1 data-bs-toggle=collapse data-bs-target=#accordion-default-content-1 aria-expanded=true aria-controls=accordion-default-content-1>
 Who set up the Commission?
 </span>
 </h2>
 </div>
-<div id=accordion-default-content-1 class=govuk-accordion__section-content aria-labelledby=accordion-default-heading-1>
-<p class=govuk-body>This is the content for Writing well for the web.</p>
+<div id=accordion-default-content-1 class="govuk-accordion__section-content accordion-collapse collapse show" aria-labelledby=accordion-default-heading-1 data-bs-parent=#accordion-default>
+<div class=accordion-body>
+<p class=govuk-body-s>Lorem ipsum dolor sit amet</p>
 </div>
 </div>
-<div class=govuk-accordion__section>
-<div class=govuk-accordion__section-header>
+</div>
+<div class="govuk-accordion__section accordion-item">
+<div class="govuk-accordion__section-header accordion-header" id=accordion-default-heading-2>
 <h2 class=govuk-accordion__section-heading>
-<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id=accordion-default-heading-2>
+<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour collapsed" id=accordion-default-heading-2 data-bs-toggle=collapse data-bs-target=#accordion-default-content-2 aria-expanded=true aria-controls=accordion-default-content-2>
 Why was the Commission set up?
 </span>
 </h2>
 </div>
-<div id=accordion-default-content-2 class=govuk-accordion__section-content aria-labelledby=accordion-default-heading-2>
-<p class=govuk-body>This is the content area.</p>
+<div id=accordion-default-content-2 class="govuk-accordion__section-content accordion-collapse collapse" aria-labelledby=accordion-default-heading-2 data-bs-parent=#accordion-default>
+<div class=accordion-body>
+<p class=govuk-body-s>Lorem ipsum dolor sit amet</p>
 </div>
 </div>
-<div class=govuk-accordion__section>
-<div class=govuk-accordion__section-header>
+</div>
+<div class="govuk-accordion__section accordion-item">
+<div class="govuk-accordion__section-heade accordion-header" id=accordion-default-heading-3>
 <h2 class=govuk-accordion__section-heading>
-<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id=accordion-default-heading-3>
+<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour collapsed" id=accordion-default-heading-3 data-bs-toggle=collapse data-bs-target=#accordion-default-content-3 aria-expanded=true aria-controls=accordion-default-content-3>
 What were the Commission’s terms of reference?
 </span>
 </h2>
 </div>
-<div id=accordion-default-content-3 class=govuk-accordion__section-content aria-labelledby=accordion-default-heading-3>
-<p class=govuk-body>This is the content for Know your audience.</p>
+<div id=accordion-default-content-3 class="govuk-accordion__section-content accordion-collapse collapse" aria-labelledby=accordion-default-heading-3 data-bs-parent=#accordion-default>
+<div class=accordion-body>
+<p class=govuk-body-s>Lorem ipsum dolor sit amet</p>
 </div>
 </div>
-<div class=govuk-accordion__section>
-<div class=govuk-accordion__section-header>
+</div>
+<div class="govuk-accordion__section accordion-item">
+<div class="govuk-accordion__section-header accordion-header" id=accordion-default-heading-4>
 <h2 class=govuk-accordion__section-heading>
-<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id=accordion-default-heading-4>
+<span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour collapsed" id=accordion-default-heading-4 data-bs-toggle=collapse data-bs-target=#accordion-default-content-4 aria-expanded=true aria-controls=accordion-default-content-4>
 What research did the Commission use?
 </span>
 </h2>
 </div>
-<div id=accordion-default-content-4 class=govuk-accordion__section-content aria-labelledby=accordion-default-heading-4>
-<p class=govuk-body>This is the content for How people read.</p>
+<div id=accordion-default-content-4 class="govuk-accordion__section-content accordion-collapse collapse" aria-labelledby=accordion-default-heading-4 data-bs-parent=#accordion-default>
+<div class=accordion-body>
+<p class=govuk-body-s>Lorem ipsum dolor sit amet</p>
+</div>
 </div>
 </div>
 </div>
@@ -211,8 +214,6 @@ All content is available under the
 </div>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
-<script src=https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js integrity=sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js integrity=sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF crossorigin=anonymous></script>
 </body>
 </html>

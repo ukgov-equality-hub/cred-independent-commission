@@ -1,0 +1,10 @@
+.govuk-button {
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 45px;
+    min-width: 250px;
+
+    &__primary {
+        background-color: $primary;
+    }
+}

@@ -1,0 +1,23 @@
+.govuk-breadcrumb {
+    .navbar-nav {
+        flex-direction: row;
+
+        li,
+        a {
+            color: $body-font;
+        }
+
+        li {
+            &:after {
+                content: ">";
+                padding: 0 0.5rem;
+            }
+
+            &:last-of-type {
+                &:after {
+                    content: "";
+                }
+            }
+        }
+    }
+}

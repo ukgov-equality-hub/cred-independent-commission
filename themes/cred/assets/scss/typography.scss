@@ -1,0 +1,38 @@
+.govuk-body-s,
+.govuk-heading-s,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-link {
+    &.govuk {
+        &-senary-text-colour {
+            color: $senary;
+
+            li {
+                color: $senary;
+            }
+        }
+
+        &-white-text-colour {
+            color: #fff;
+        }
+    }
+}
+
+.govuk-body-s {
+    color: $body-font;
+}
+
+h2,
+h3,
+h4,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-heading-a {
+    color: $primary;
+}
+ 
+.govuk-background-default {
+    li {
+        color: $primary;
+    }
+}

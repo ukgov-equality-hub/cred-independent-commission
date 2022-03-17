@@ -17,94 +17,66 @@
               </p>
             </div>
           </div>
-
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Accordion Item #1
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Accordion Item #2
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Accordion Item #3
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-              <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-                <div class="govuk-accordion__section ">
-                  <div class="govuk-accordion__section-header">
+              <div class="govuk-accordion accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section accordion-item">
+                  <div class="govuk-accordion__section-header accordion-header" id="accordion-default-heading-1">
                     <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id="accordion-default-heading-1">
+                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id="accordion-default-heading-1"  data-bs-toggle="collapse" data-bs-target="#accordion-default-content-1" aria-expanded="true" aria-controls="accordion-default-content-1">
                         Who set up the Commission?
                       </span>
                     </h2>
                   </div>
-                  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-                    <p class='govuk-body'>This is the content for Writing well for the web.</p>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content accordion-collapse collapse show" aria-labelledby="accordion-default-heading-1" data-bs-parent="#accordion-default">
+                    <div class="accordion-body">
+                      <p class='govuk-body-s'>Lorem ipsum dolor sit amet</p>
+                    </div>
                   </div>
                 </div>
-                <div class="govuk-accordion__section ">
-                  <div class="govuk-accordion__section-header">
+
+                <div class="govuk-accordion__section accordion-item">
+                  <div class="govuk-accordion__section-header accordion-header" id="accordion-default-heading-2">
                     <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id="accordion-default-heading-2">
+                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour collapsed" id="accordion-default-heading-2" data-bs-toggle="collapse" data-bs-target="#accordion-default-content-2" aria-expanded="true" aria-controls="accordion-default-content-2">
                         Why was the Commission set up?
                       </span>
                     </h2>
                   </div>
-                  <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-                    <p class='govuk-body'>This is the content area.</p>
+                  <div id="accordion-default-content-2" class="govuk-accordion__section-content accordion-collapse collapse" aria-labelledby="accordion-default-heading-2" data-bs-parent="#accordion-default">
+                    <div class="accordion-body">
+                      <p class='govuk-body-s'>Lorem ipsum dolor sit amet</p>
+                    </div>
                   </div>
                 </div>
-                <div class="govuk-accordion__section ">
-                  <div class="govuk-accordion__section-header">
+
+                <div class="govuk-accordion__section accordion-item">
+                  <div class="govuk-accordion__section-heade accordion-header" id="accordion-default-heading-3">
                     <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id="accordion-default-heading-3">
+                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour collapsed" id="accordion-default-heading-3" data-bs-toggle="collapse" data-bs-target="#accordion-default-content-3" aria-expanded="true" aria-controls="accordion-default-content-3">
                         What were the Commission’s terms of reference?	
                       </span>
                     </h2>
                   </div>
-                  <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                    <p class='govuk-body'>This is the content for Know your audience.</p>
+                  <div id="accordion-default-content-3" class="govuk-accordion__section-content accordion-collapse collapse" aria-labelledby="accordion-default-heading-3" data-bs-parent="#accordion-default"> 
+                    <div class="accordion-body">
+                      <p class='govuk-body-s'>Lorem ipsum dolor sit amet</p>
+                    </div>
                   </div>
                 </div>
-                <div class="govuk-accordion__section ">
-                  <div class="govuk-accordion__section-header">
+
+                <div class="govuk-accordion__section accordion-item">
+                  <div class="govuk-accordion__section-header accordion-header" id="accordion-default-heading-4">
                     <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour" id="accordion-default-heading-4">
+                      <span class="govuk-accordion__section-button govuk-heading-s govuk-senary-text-colour collapsed" id="accordion-default-heading-4" data-bs-toggle="collapse" data-bs-target="#accordion-default-content-4" aria-expanded="true" aria-controls="accordion-default-content-4">
                         What research did the Commission use?
                       </span>
                     </h2>
                   </div>
-                  <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
-                    <p class='govuk-body'>This is the content for How people read.</p>
+                  <div id="accordion-default-content-4" class="govuk-accordion__section-content accordion-collapse collapse" aria-labelledby="accordion-default-heading-4" data-bs-parent="#accordion-default">
+                    <div class="accordion-body">
+                      <p class='govuk-body-s'>Lorem ipsum dolor sit amet</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -115,5 +87,6 @@
     </div>
 
     {{ partial "footer/site_footer.html" . }}
+
   </body>
 </html>

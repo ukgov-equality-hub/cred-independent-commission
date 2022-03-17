@@ -1,9 +1,46 @@
 .govuk-accordion {
-    .govuk-accordion__section-heading {
-        border-top : 2px solid $primary;
-
-        span {
-            padding-top: 0;
+    .govuk-accordion__section {
+        &-heading {
+            padding-bottom: 0;
+            border-top : 2px solid $primary;
         }
+
+        &-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow-anchor: none;
+            padding: 0;
+
+            &.collapsed {
+                &:after {
+                    margin-left: auto;
+                    color: $primary;
+                    content: "+";
+                    transition: transform 0.2s ease-in-out;
+                }
+            }
+    
+           
+            &:after {
+                width: 20px;
+                margin-left: auto;
+                content: "-";
+                font-size: 2rem;       
+                text-align: center;     
+            }
+        }
+    }
+
+    .accordion-body {
+        padding: 15px 0 0 0;
+    }
+    .accordion-item {
+        background-color: transparent;
+        border: none;
+    }
+
+    .accordion-header {
+        cursor: pointer;
     }
 }

@@ -1706,6 +1706,31 @@ progress {
   font-size: 0.875rem;
   border-radius: 0.2rem; }
 
+.fade {
+  transition: opacity 0.15s linear; }
+  @media (prefers-reduced-motion: reduce) {
+    .fade {
+      transition: none; } }
+  .fade:not(.show) {
+    opacity: 0; }
+
+.collapse:not(.show) {
+  display: none; }
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease; }
+  @media (prefers-reduced-motion: reduce) {
+    .collapsing {
+      transition: none; } }
+  .collapsing.collapse-horizontal {
+    width: 0;
+    height: auto;
+    transition: width 0.35s ease; }
+    @media (prefers-reduced-motion: reduce) {
+      .collapsing.collapse-horizontal {
+        transition: none; } }
 .dropup,
 .dropend,
 .dropdown,
@@ -10498,6 +10523,17 @@ footer {
   border-bottom: 0; }
   .govuk-header__container {
     border-bottom: none; }
+  .govuk-header .govuk-width-flex {
+    align-items: center;
+    justify-content: space-between; }
+  .govuk-header .govuk-header__navigation-item {
+    border: none; }
+    .govuk-header .govuk-header__navigation-item.active {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 0.1em; }
+  .govuk-header .govuk-header__navigation-mobile ul {
+    display: flex; }
 
 .govuk-recommendations h4, .govuk-recommendations .h4 {
   padding-bottom: 1rem;
@@ -10536,8 +10572,35 @@ footer {
       width: 120% !important;
       height: 120% !important; } }
 .govuk-accordion .govuk-accordion__section-heading {
+  padding-bottom: 0;
   border-top: 2px solid #512F70; }
-  .govuk-accordion .govuk-accordion__section-heading span {
-    padding-top: 0; }
+
+.govuk-accordion .govuk-accordion__section-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-anchor: none;
+  padding: 0; }
+  .govuk-accordion .govuk-accordion__section-button.collapsed:after {
+    margin-left: auto;
+    color: #512F70;
+    content: "+";
+    transition: transform 0.2s ease-in-out; }
+  .govuk-accordion .govuk-accordion__section-button:after {
+    width: 20px;
+    margin-left: auto;
+    content: "-";
+    font-size: 2rem;
+    text-align: center; }
+
+.govuk-accordion .accordion-body {
+  padding: 15px 0 0 0; }
+
+.govuk-accordion .accordion-item {
+  background-color: transparent;
+  border: none; }
+
+.govuk-accordion .accordion-header {
+  cursor: pointer; }
 
 /*# sourceMappingURL=index.css.map */

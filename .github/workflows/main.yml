@@ -10,10 +10,10 @@ on:
 jobs:
   deploy: 
     runs-on: ubuntu-20.04
+    working-directory: ./hugo/public
     environment: staging
     steps:
       - uses: actions/checkout@v2
-      
       - name: Deploy
         uses: citizen-of-planet-earth/cf-cli-action@master
         with:

@@ -6,11 +6,15 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  
+defaults:
+    run:
+      working-directory: ./hugo/public
 
 jobs:
+    
   deploy: 
     runs-on: ubuntu-20.04
-    working-directory: ./hugo/public
     environment: staging
     steps:
       - uses: actions/checkout@v2

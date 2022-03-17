@@ -1,0 +1,37 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm ci
+
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    needs: verify
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy
+        uses: citizen-of-planet-earth/cf-cli-action@master
+        with:
+          cf_api: https://api.london.cloud.service.gov.uk
+          cf_username: ${{ secrets.CF_USER_STAGING }}
+          cf_password: ${{ secrets.CF_PASSWORD_STAGING }}
+          cf_org: cabinet-office-race-disparity-unit
+          cf_space: cred
+          command: push -f manifest-staging.yml

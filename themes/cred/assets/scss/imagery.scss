@@ -1,0 +1,26 @@
+.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+picture {
+    display: inline-block;
+    height: 100%;
+}
+
+.contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.govuk-image-container {
+    @include media-breakpoint-down(lg) { 
+        margin-bottom: 10px;
+
+        picture {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.govuk-accordion {
+    .govuk-accordion__section-heading {
+        border-top : 2px solid $primary;
+
+        span {
+            padding-top: 0;
+        }
+    }
+}

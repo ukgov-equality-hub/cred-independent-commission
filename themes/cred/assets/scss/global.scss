@@ -1,0 +1,46 @@
+body {
+  color: $body-font;
+}
+
+.govuk-background {
+  &-default {
+    background: #fff;
+  }
+
+  &-primary {
+    background: $primary;
+  }
+
+  &-secondary {
+    background: $secondary;
+  }
+
+  &-tertiary {
+    background: $tertiary;
+  }
+
+  &-senary {
+    background: $senary;
+
+    h2,
+    h3,
+    p {
+      color: #fff;
+    }
+  }
+
+  &-octonary {
+    background: $octonary;
+  }
+
+  &-nonary {
+    background: $nonary;
+  }
+}
+
+.govuk-width-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}

@@ -6,3 +6,4 @@ applications:
   random-route: true
   buildpacks:
   - staticfile_buildpack
+  path: ./hugo/public

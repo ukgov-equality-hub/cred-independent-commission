@@ -1,7 +1,3 @@
-baseURL = 'https://cred.independent-commission.uk/'
+baseURL = 'https://cred-spontaneous-gerenuk-qq.london.cloudapps.digital/'
 languageCode = 'en-us'
 title = 'CRED Independent Commission'
-
-
-[params]
-favicon = "static/images/favicon.ico" # Path to favicon file

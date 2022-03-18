@@ -1,0 +1,7 @@
+baseURL = 'https://cred.independent-commission.uk/'
+languageCode = 'en-us'
+title = 'CRED Independent Commission'
+
+
+[params]
+favicon = "static/images/favicon.ico" # Path to favicon file

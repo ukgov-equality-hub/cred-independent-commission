@@ -5,11 +5,18 @@
   </head>
   <body>
     {{ partial "header/header" . }}
-    {{ partial "block/hero" . }}
     {{ partial "block/hero_small" . }}
-    {{ partial "block/intro" . }}
-    {{ partial "block/recommendations" . }}
-    {{ partial "block/publications" . }}
+    <div class="govuk-width-container">
+      <a href="index.html" class="govuk-back-link">Back to home</a>
+      <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-xl">The page you are looking for cannot be found</h2>
+          </div>
+        </div>
+    
+      </main>
+    </div>
     {{ partial "footer/site_footer.html" . }}
   </body>
 </html>

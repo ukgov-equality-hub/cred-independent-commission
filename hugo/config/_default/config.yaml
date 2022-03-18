@@ -1,8 +1,10 @@
-baseURL: "http://example.org/"
+baseURL: "https://cred.independent-commission.uk/"
 languageCode: en-au
-title: Hugo Tutorial Getting Started
+title: The Commission on Race and Ethnic Disparities
 
 markup:
   goldmark:
     renderer:
       unsafe: true
+
+      

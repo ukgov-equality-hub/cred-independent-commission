@@ -3,6 +3,7 @@ applications:
 - name: cred
   memory: 64M
   instances: 2
+  path: ./hugo/public
   buildpacks:
   - staticfile_buildpack
 

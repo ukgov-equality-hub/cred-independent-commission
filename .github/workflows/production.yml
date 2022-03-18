@@ -1,0 +1,23 @@
+name: Prod Manual
+
+on: workflow_dispatch
+  
+defaults:
+    run:
+      working-directory: hugo/public
+      
+jobs:  
+  deploy: 
+    runs-on: ubuntu-20.04
+    environment: production
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        uses: citizen-of-planet-earth/cf-cli-action@master
+        with:
+          cf_api: https://api.london.cloud.service.gov.uk
+          cf_username: ${{ secrets.CF_USER_STAGING }}
+          cf_password: ${{ secrets.CF_PASSWORD_STAGING }}
+          cf_org: cabinet-office-race-disparity-unit
+          cf_space: cred-production
+          command: push -f manifest-production.yml

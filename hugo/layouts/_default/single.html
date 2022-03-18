@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{ partial "header/head" . }}
+  </head>
+  <body>
+    {{ partial "header/header" . }}
+    {{ partial "block/hero_small" . }}
+    {{ partial "block/breadcrumbs" . }}
+    <div class="govuk-width-container">
+        <div class="govuk-main-wrapper">
+            <div class="govuk-grid-row">
+                <div class="govuk-width-flex govuk-!-padding-0">
+                    <div class="govuk-grid-column-full">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ partial "footer/site_footer.html" . }}
+  </body>
+</html>

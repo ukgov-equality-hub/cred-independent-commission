@@ -1,49 +1,18 @@
 <header class="govuk-header govuk-background-primary govuk-!-padding-top-2 govuk-!-padding-bottom-2" role="banner" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
         <div class="govuk-grid-row">
-            <div class="govuk-width-flex">
-                <div class="govuk-grid-column-full">
-                    <div class="govuk-header__logo">
-                        <a href="/index.html" class="govuk-header__link govuk-header__link--homepage">
-                        <span class="govuk-header__logotype">
-                            <picture>
-                                <img width="164" height="68" src="/images/govuk-cred-logo-white.svg" class="attachment-full size-full" alt="Go to the cred.gov.uk homepage" loading="lazy">
-                            </picture>   
-                        </span>
-                        </a>
-                    </div>
-
-                    <nav aria-label="Menu" class="govuk-header__navigation nav d-none d-lg-block">
-                        <ul id="navigation" class="govuk-header__navigation-list">
-                            {{ $currentPage := . }}
-                            {{ range .Site.Menus.mainmenu }}
-                                {{ if .HasChildren }}
-                                    <li class="govuk-header__navigation-item {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-                                        <a class="nav-link navbar-item govuk-header__link" href="#">
-                                            {{ .Pre }}
-                                            <span>{{ .Name }}</span>
-                                        </a>
-                                    </li>
-                                    <ul class="sub-menu">
-                                        {{ range .Children }}
-                                            <li class="govuk-header__navigation-item {{ if $currentPage.IsMenuCurrent "mainmenu" . }}active{{ end }}">
-                                                <a class="nav-link navbar-item govuk-header__link" href="{{ .URL }}">{{ .Name }}</a>
-                                            </li>
-                                        {{ end }}
-                                    </ul>
-                                {{ else }}
-                                    <li class="govuk-header__navigation-item {{ if $currentPage.IsMenuCurrent "mainmenu" . }}active{{ end }}"> 
-                                        <a class="nav-link navbar-item govuk-header__link" href="{{ .URL }}">
-                                            {{ .Pre }}
-                                            <span>{{ .Name }}</span>
-                                        </a>
-                                    </li>
-                                {{ end }}
-                            {{ end }}
-                        </ul>
-                    </nav>
+            <div class="govuk-grid-column-full">
+                <div class="govuk-header__logo">
+                    <a href="/index.html" class="govuk-header__link govuk-header__link--homepage">
+                    <span class="govuk-header__logotype">
+                        <picture>
+                            <img width="164" height="68" src="/images/govuk-cred-logo-white.svg" class="attachment-full size-full" alt="Go to the cred.gov.uk homepage" loading="lazy">
+                        </picture>   
+                    </span>
+                    </a>
                 </div>
-                <nav aria-label="Menu" class="govuk-header__navigation govuk-header__navigation-mobile nav d-block d-lg-none">
+
+                <nav aria-label="Menu" class="govuk-header__navigation nav d-none d-lg-block">
                     <ul id="navigation" class="govuk-header__navigation-list">
                         {{ $currentPage := . }}
                         {{ range .Site.Menus.mainmenu }}
@@ -72,7 +41,37 @@
                         {{ end }}
                     </ul>
                 </nav>
-            </div>         
+            </div>
+            <nav aria-label="Menu" class="govuk-header__navigation govuk-header__navigation-mobile nav d-block d-lg-none">
+                <ul id="navigation" class="govuk-header__navigation-list">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.mainmenu }}
+                        {{ if .HasChildren }}
+                            <li class="govuk-header__navigation-item {{ if $currentPage.HasMenuCurrent "mainmenu" . }}active{{ end }}">
+                                <a class="nav-link navbar-item govuk-header__link" href="#">
+                                    {{ .Pre }}
+                                    <span>{{ .Name }}</span>
+                                </a>
+                            </li>
+                            <ul class="sub-menu">
+                                {{ range .Children }}
+                                    <li class="govuk-header__navigation-item {{ if $currentPage.IsMenuCurrent "mainmenu" . }}active{{ end }}">
+                                        <a class="nav-link navbar-item govuk-header__link" href="{{ .URL }}">{{ .Name }}</a>
+                                    </li>
+                                {{ end }}
+                            </ul>
+                        {{ else }}
+                            <li class="govuk-header__navigation-item {{ if $currentPage.IsMenuCurrent "mainmenu" . }}active{{ end }}"> 
+                                <a class="nav-link navbar-item govuk-header__link" href="{{ .URL }}">
+                                    {{ .Pre }}
+                                    <span>{{ .Name }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+               
         </div>
     </div>
 </header>

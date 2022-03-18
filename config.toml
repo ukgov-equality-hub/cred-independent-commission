@@ -1,15 +1,7 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://cred-spontaneous-gerenuk-qq.london.cloudapps.digital/'
 languageCode = 'en-us'
-title = 'CRED'
+title = 'CRED Independent Commission'
 
 
-[menu]
-  [[menu.main]]
-    identifier = "publications"
-    name = "Publications"
-    url = "/publications/"
-
-  [[menu.main]]
-    identifier = "faqs"
-    name = "FAQS"
-    url = "/faqs/"
+[params]
+favicon = "static/images/favicon.ico" # Path to favicon file

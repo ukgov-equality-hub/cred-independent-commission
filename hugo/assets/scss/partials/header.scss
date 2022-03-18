@@ -25,4 +25,10 @@
             display: flex;
         }
     }
+
+    .govuk-grid-column-full {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

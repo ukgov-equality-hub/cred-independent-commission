@@ -34,7 +34,12 @@
 
     .accordion-body {
         padding: 15px 0 0 0;
+
+        li {
+            color: $body-font;
+        }
     }
+    
     .accordion-item {
         background-color: transparent;
         border: none;

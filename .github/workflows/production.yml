@@ -19,5 +19,5 @@ jobs:
           cf_username: ${{ secrets.CF_USER_STAGING }}
           cf_password: ${{ secrets.CF_PASSWORD_STAGING }}
           cf_org: cabinet-office-race-disparity-unit
-          cf_space: cred-staging
+          cf_space: cred-production
           command: push -f manifest-production.yml

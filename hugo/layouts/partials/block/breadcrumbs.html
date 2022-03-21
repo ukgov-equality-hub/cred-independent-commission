@@ -1,22 +1,21 @@
 <div class="govuk-breadcrumb govuk-background-nonary">
-  <main class="govuk-width-container">
+  <div class="govuk-width-container">
     <div class="govuk-main-wrapper govuk-!-padding-3">
-        <div class="govuk-grid-row">  
-          <ul  class="nav navbar-nav">
-            {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-          </ul>
-          {{ define "breadcrumbnav" }}
-          {{ if .p1.Parent }}
-          {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
-          {{ else if not .p1.IsHome }}
-          {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
-          {{ end }}
-          <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
-            <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
-          </li>
-          {{ end }}
-        </div>
+      <div class="govuk-grid-row">  
+        <ul  class="nav navbar-nav">
+          {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+        </ul>
+        {{ define "breadcrumbnav" }}
+        {{ if .p1.Parent }}
+        {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+        {{ else if not .p1.IsHome }}
+        {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+        {{ end }}
+        <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
+          <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+        </li>
+        {{ end }}
       </div>
     </div>
-  </main>
+  </div>
 </div>

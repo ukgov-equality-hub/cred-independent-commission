@@ -5,10 +5,11 @@
   </head>
   <body>
     {{ partial "header/header" . }}
-    {{ partial "block/hero" . }}
-    {{ partial "block/intro" . }}
-    {{ partial "block/recommendations" . }}
-    {{ partial "block/publications" . }}
-    {{ partial "footer/site_footer.html" . }}
+    <main>
+      {{ partial "block/intro" . }}
+      {{ partial "block/recommendations" . }}
+      {{ partial "block/publications" . }}
+      {{ partial "footer/site_footer.html" . }}
+    </main>
   </body>
 </html>

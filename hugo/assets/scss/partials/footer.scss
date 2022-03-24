@@ -16,6 +16,9 @@ footer {
     .govuk-footer__link:visited {
         color: #fff;
     }
+    .govuk-footer__link:focus {
+        color: #0b0c0c;
+    }
 
     .govuk-footer__meta {
         flex-direction: column;
@@ -48,6 +51,12 @@ footer {
     .govuk-footer__meta-item--grow {
         @include media-breakpoint-down(lg) { 
             flex-basis: 0px;
+        }
+    }
+
+    .govuk-footer__meta-logo {
+        .govuk-footer__link:focus img {
+            filter: invert(1);
         }
     }
 }

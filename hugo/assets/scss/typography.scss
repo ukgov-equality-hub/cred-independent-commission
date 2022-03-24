@@ -7,6 +7,10 @@
         &-senary-text-colour {
             color: $senary;
 
+            &:focus {
+                color: #0b0c0c;
+            }
+
             li {
                 color: $senary;
             }
@@ -31,8 +35,8 @@ h4,
     color: $primary;
 }
  
-.govuk-background-default {
-    li {
-        color: $primary;
-    }
+ul {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

@@ -31,4 +31,10 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    .govuk-header__logo {
+        .govuk-header__link:focus img {
+            filter: invert(1);
+        }
+    }
 }

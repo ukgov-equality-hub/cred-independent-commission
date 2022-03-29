@@ -2,13 +2,28 @@
     .govuk-accordion__section {
         &-heading {
             padding-bottom: 0;
-            border-top : 2px solid $primary;
+            border-top: 2px solid $primary;
+
+            button {
+                border: none;
+                background: transparent;
+                width: 100%;  
+                
+                &:focus-visible {
+                    outline: 3px solid transparent;
+                    color: #0b0c0c;
+                    background-color: #ffdd00;
+                    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+                    text-decoration: none;
+                }
+            }
         }
 
         &-button {
             position: relative;
             display: flex;
             align-items: center;
+            text-align: left;
             overflow-anchor: none;
             padding: 0;
 
@@ -47,17 +62,5 @@
 
     .accordion-header {
         cursor: pointer;
-
-        &:focus-visible {
-            outline: 3px solid transparent;
-            color: #0b0c0c;
-            background-color: #ffdd00;
-            box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
-            text-decoration: none;
-
-            h2 span {
-                color: #0b0c0c;
-            }
-        }
     }
 }

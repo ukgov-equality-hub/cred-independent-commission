@@ -36,15 +36,15 @@ footer {
         @include media-breakpoint-up(md) { 
             position: relative;
             top: -10%;
-            width: 150% !important;
-            height: 150% !important;
+            width: 110% !important;
+            height: 120% !important;
         }
 
         @include media-breakpoint-up(lg) { 
             position: relative;
-            top: -10%;
+            top: -20%;
             width: 110% !important;
-            height: 110% !important;
+            height: 130% !important;
         }
     }
     

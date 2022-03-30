@@ -25,26 +25,15 @@ footer {
         align-items: baseline;
     }
 
-    .govuk-footer__background img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-
-        @include media-breakpoint-down(lg) { 
-            text-align: center;
-        }
-        @include media-breakpoint-up(md) { 
-            position: relative;
-            top: -10%;
-            width: 110% !important;
-            height: 120% !important;
-        }
+    .govuk-background {
+        position: relative;
+        background-image: url('/images/govuk-footer-bkg.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
 
         @include media-breakpoint-up(lg) { 
-            position: relative;
-            top: -20%;
-            width: 110% !important;
-            height: 130% !important;
+            background-size: contain;
         }
     }
     

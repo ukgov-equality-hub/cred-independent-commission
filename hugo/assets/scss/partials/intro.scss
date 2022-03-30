@@ -16,4 +16,16 @@
     h1 {
         color: #fff;
     }
+
+    .govuk-background {
+        position: relative;
+        background-image: url('/images/govuk-intro-image.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+
+        @include media-breakpoint-up(md) { 
+            background-size: contain;
+        }
+    }
 }

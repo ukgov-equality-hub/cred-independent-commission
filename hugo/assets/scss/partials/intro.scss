@@ -2,11 +2,14 @@
     overflow: hidden;
 
     picture img {
+        padding-bottom: 30px;
+
         @include media-breakpoint-up(md) { 
             position: relative;
-            top: -10%;
-            width: 120% !important;
-            height: 120% !important;
+            top: calc(50% - 40%);
+            width: 100% !important;
+            height: 80% !important;
+            padding: 0;
         }
     }
 

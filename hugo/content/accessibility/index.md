@@ -24,16 +24,6 @@ draft: false
     <li><a class="govuk-link external-link" href="https://www.gov.uk/government/publications/inclusive-britain-action-plan-government-response-to-the-commission-on-race-and-ethnic-disparities" target="_self">Inclusive Britain: government response to the Commission on Race and Ethnic Disparities</a></li>
 </ul>
 
-<h3 class="govuk-heading-s">How accessible this website is</h3>
-<p class="govuk-body-s">We know some parts of this website are not fully accessible:</p>
-<ul>
-    <li>the text will not reflow in a single column when you change the size of the browser window</li>
-    <li>you cannot modify the line height or spacing of text</li>
-    <li>some of our online forms are difficult to navigate using just a keyboard</li>
-    <li>you cannot skip to the main content when using a screen reader</li>
-    <li>there’s a limit to how far you can magnify the map on our ‘contact us’ page</li>
-</ul>
-
 <h4 class="govuk-heading-s">Feedback and contact information</h4>
 <p class="govuk-body-s">If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille, email <a class="govuk-link govuk-email" href="mailto:ethnicity@cabinetoffice.gov.uk">ethnicity@cabinetoffice.gov.uk</a></p>
 
@@ -58,6 +48,4 @@ draft: false
 <h3 class="govuk-heading-m">Preparation of this accessibility statement</h3>
 
 <p class="govuk-body-s">This statement was prepared on 28 March 2022.</p>
-
-<p class="govuk-body-s">This website was last tested on 27 March 2022. The test was carried out by Juicy Media Ltd.</p>
 

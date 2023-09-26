@@ -1,8 +1,6 @@
 {
-  "name": "video-hugo-sass-bootstrap",
-  "version": "0.1.0",
-  "description": "Using sass with hugo and bootstrap",
-  "main": " ",
+  "name": "cred-independent-commission",
+  "description": "The Commission on Race and Ethnic Disparities website",
   "scripts": {
     "dev": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender",
     "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender --buildFuture --buildDrafts",
@@ -14,11 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/future-wd/video-hugo-sass-bootstrap"
+    "url": "https://github.com/racedisparityaudit/cred-independent-commission/"
   },
-  "keywords": [],
-  "author": "Future Web Design",
-  "license": "ISC",
+  "author": "UK Government's Equality Hub",
+  "license": "Open Government Licence v3 https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
   "devDependencies": {
     "exec-bin": "^1.0.0",
     "hugo-installer": "^3.1.0",

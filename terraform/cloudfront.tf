@@ -1,8 +1,8 @@
 
-data "aws_acm_certificate" "equality_data_dot_service_dot_cabinet_office_dot_gov_dot_uk_ssl_certificate" {
-  domain   = "cred.independent-commission.uk"
-  statuses = ["ISSUED"]
-}
+//data "aws_acm_certificate" "equality_data_dot_service_dot_cabinet_office_dot_gov_dot_uk_ssl_certificate" {
+//  domain   = "cred.independent-commission.uk"
+//  statuses = ["ISSUED"]
+//}
 
 data "aws_cloudfront_cache_policy" "cache_policy_managed_caching_optimised" {
   name = "Managed-CachingOptimized"
@@ -20,11 +20,12 @@ resource "aws_cloudfront_distribution" "distribution_for_s3_bucket" {
 
   price_class = "PriceClass_100"
 
-  aliases = ["${var.dns_record_subdomain_including_dot}${data.aws_route53_zone.cred_dot_independent_commission_dot_uk_zone.name}"]
+//  aliases = ["${var.dns_record_subdomain_including_dot}${data.aws_route53_zone.cred_dot_independent_commission_dot_uk_zone.name}"]
 
   viewer_certificate {
-    acm_certificate_arn = data.aws_acm_certificate.equality_data_dot_service_dot_cabinet_office_dot_gov_dot_uk_ssl_certificate.arn
-    cloudfront_default_certificate = false
+//    acm_certificate_arn = data.aws_acm_certificate.equality_data_dot_service_dot_cabinet_office_dot_gov_dot_uk_ssl_certificate.arn
+//    cloudfront_default_certificate = false
+    cloudfront_default_certificate = true
     minimum_protocol_version = "TLSv1"
 //    ssl_support_method = "sni-only"
   }

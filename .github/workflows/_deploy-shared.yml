@@ -1,0 +1,91 @@
+name: '(shared functionality) Deploy'
+
+on:
+  workflow_call:
+    inputs:
+      TERRAFORM_STATE_BUCKET:
+        required: true
+        type: string
+      TERRAFORM_STATE_FILE:
+        required: true
+        type: string
+      TERRAFORM_TFVARS_FILE:
+        required: true
+        type: string
+    secrets:
+      TERRAFORM_AWS_ACCESS_KEY_ID:
+        required: true
+      TERRAFORM_AWS_SECRET_ACCESS_KEY:
+        required: true
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFORM_AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.TERRAFORM_AWS_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: eu-west-2
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+
+    outputs:
+      static_website_s3_bucket: ${{ steps.static_website_s3_bucket.outputs.test }}
+
+    steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v3
+
+      - name: 'Init Terraform'
+        run: |
+          terraform init "-backend-config=bucket=${{ inputs.TERRAFORM_STATE_BUCKET }}" "-backend-config=key=${{ inputs.TERRAFORM_STATE_FILE }}" "-backend-config=region=${{ env.AWS_DEFAULT_REGION }}" "-backend-config=access_key=${{ secrets.TERRAFORM_AWS_ACCESS_KEY_ID }}" "-backend-config=secret_key=${{ secrets.TERRAFORM_AWS_SECRET_ACCESS_KEY }}"
+        working-directory: ./terraform
+
+      - name: 'Apply Terraform changes'
+        run: |
+          terraform apply \
+          -var-file "${{ inputs.TERRAFORM_TFVARS_FILE }}" \
+          -auto-approve
+        working-directory: ./terraform
+
+      - name: 'Download the TFState file'
+        run: |
+          aws s3 cp "s3://${{ inputs.TERRAFORM_STATE_BUCKET }}/${{ inputs.TERRAFORM_STATE_FILE }}" ./current_tf_state.json
+
+      - id: static_website_s3_bucket
+        name: 'Find the name of the S3 bucket where we will put the static website files'
+        run: |
+          echo test=$(jq -r '.resources[] | select(.name == "static_website_s3_bucket").instances[].attributes.bucket' current_tf_state.json) >> static_website_s3_bucket.txt
+          cat static_website_s3_bucket.txt
+          cat static_website_s3_bucket.txt >> $GITHUB_OUTPUT
+
+  build_and_deploy:
+    name: 'Build and Deploy'
+    runs-on: ubuntu-latest
+    needs: terraform
+
+    env:
+      STATIC_WEBSITE_S3_BUCKET: "${{needs.terraform.outputs.static_website_s3_bucket}}"
+
+    steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v3
+
+      - name: 'Save build run info to JSON file'
+        run: |
+          echo '{ "git_commit": "${{ github.sha }}", "git_branch": "${{ github.ref_name }}", "github_action_name": "${{ github.workflow }}", "github_action_run_url": "https://github.com/racedisparityaudit/cred-independent-commission/actions/runs/${{ github.run_id }}/attempts/${{ github.run_attempt }}" }' > build_info.json
+        working-directory: ./hugo/data
+
+      - name: 'Install Node.JS dependencies'
+        run: |
+          npm ci
+        working-directory: ./hugo
+
+      - name: 'Build the Hugo website'
+        run: |
+          npm run build
+        working-directory: ./hugo
+
+      - name: 'Copy the files to AWS S3'
+        run: |
+          aws s3 sync . s3://${{ env.STATIC_WEBSITE_S3_BUCKET }} --delete --exclude '.git*'
+        working-directory: ./hugo/public

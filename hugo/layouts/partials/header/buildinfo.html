@@ -1,0 +1,4 @@
+{{ "<!-- git commit: " | safeHTML }}{{ .Site.Data.build_info.git_commit }}{{ "-->" | safeHTML }}
+{{ "<!-- git branch: " | safeHTML }}{{ .Site.Data.build_info.git_branch }}{{ "-->" | safeHTML }}
+{{ "<!-- GitHub Action name: " | safeHTML }}{{ .Site.Data.build_info.github_action_name }}{{ "-->" | safeHTML }}
+{{ "<!-- GitHub Action run url: " | safeHTML }}{{ .Site.Data.build_info.github_action_run_url }}{{ "-->" | safeHTML }}

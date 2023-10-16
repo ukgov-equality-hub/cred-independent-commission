@@ -1,0 +1,9 @@
+# Terraform
+.terraform
+.terraform.lock.hcl
+
+# JetBrains files
+.idea
+
+# Hugo server files
+/hugo/resources/_gen/

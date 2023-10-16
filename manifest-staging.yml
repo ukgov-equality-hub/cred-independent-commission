@@ -1,9 +1,0 @@
----
-applications:
-- name: cred
-  memory: 64M
-  instances: 2
-  random-route: true
-  buildpacks:
-  - staticfile_buildpack
-  path: ./hugo/public

@@ -5,6 +5,11 @@ resource "aws_acm_certificate" "https_certificate_for_our_domain" {
 
   domain_name = "${var.dns_record_subdomain_including_dot}${data.aws_route53_zone.cred_dot_independent_commission_dot_uk_zone.name}"
   validation_method = "DNS"
+
+  tags = {
+    Service = var.service_name
+    Environment = var.environment
+  }
 }
 
 resource "aws_route53_record" "example" {

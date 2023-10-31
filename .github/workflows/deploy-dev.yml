@@ -12,9 +12,12 @@ jobs:
   terraform_build_deploy:
     uses: ./.github/workflows/_deploy-shared.yml
     with:
+      GITHUB_ACTIONS_ENVIRONMENT: Dev
       TERRAFORM_STATE_BUCKET: uk-gov-equality-hub-terraform-state-bucket
       TERRAFORM_STATE_FILE: cred_dev.tfstate
       TERRAFORM_TFVARS_FILE: dev.tfvars
     secrets:
       TERRAFORM_AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFORM_AWS_ACCESS_KEY_ID }}
       TERRAFORM_AWS_SECRET_ACCESS_KEY: ${{ secrets.TERRAFORM_AWS_SECRET_ACCESS_KEY }}
+      BASIC_AUTH_USERNAME: ${{ secrets.BASIC_AUTH_USERNAME }}
+      BASIC_AUTH_PASSWORD: ${{ secrets.BASIC_AUTH_PASSWORD }}

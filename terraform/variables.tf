@@ -36,3 +36,16 @@ variable "aws_region" {
   description = "The AWS region used for the provider and resources."
   default = "eu-west-2"
 }
+
+// SECRETS
+// These variables are set in GitHub Actions environment-specific secrets
+variable "BASIC_AUTH_USERNAME" {
+  type = string
+  description = "The username for HTTP Basic Auth for the Dev website"
+  default = ""
+}
+variable "BASIC_AUTH_PASSWORD" {
+  type = string
+  description = "The username for HTTP Basic Auth for the Dev website"
+  default = ""
+}

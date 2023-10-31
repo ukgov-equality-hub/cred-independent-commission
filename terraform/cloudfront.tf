@@ -51,6 +51,11 @@ resource "aws_cloudfront_distribution" "distribution_for_s3_bucket" {
     target_origin_id = "${var.service_name_hyphens}--${var.environment_hyphens}--S3-origin"
     viewer_protocol_policy = "redirect-to-https"
     compress = true
+
+    function_association {
+      event_type = "viewer-request"
+      function_arn = aws_cloudfront_function.index_html_function.arn
+    }
   }
 
   restrictions {
@@ -66,4 +71,18 @@ resource "aws_cloudfront_origin_access_control" "oac_for_s3_bucket" {
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
+}
+
+resource "aws_cloudfront_function" "index_html_function" {
+  name    = "${var.service_name_hyphens}--${var.environment_hyphens}--index_html-function"
+  runtime = "cloudfront-js-1.0"
+  publish = true
+  code    = <<EOT
+function handler(event) {
+  if (event.request.uri.endsWith('/')) {
+      event.request.uri += 'index.html';
+  }
+  return event.request;
+}
+EOT
 }

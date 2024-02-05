@@ -1,21 +1,14 @@
 
-resource "aws_cloudfront_cache_policy" "cloudfront_cache_policy_for_s3_bucket" {
-  name = "${var.service_name_hyphens}--${var.environment_hyphens}-Cache-Policy"
-  min_ttl = 0
-  default_ttl = 60
-  max_ttl = 600
+data "aws_cloudfront_cache_policy" "cloudfront_cache_policy__managed_caching_disabled" {
+  // Previously, we used a Custom Cache Policy for each CloudFront Distribution.
+  // But AWS has a quota of 20 custom cache policies per AWS account, with no way of increasing the quota
+  // https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-policies
+  // Some of our services need custom cache policies, but others (like this service) can get away with a managed policy without it being too much of a hassle
+  // This is very frustrating (because it's nice to be able to tweak the settings exactly as we like) but there's probably nothing we can do about it
 
-  parameters_in_cache_key_and_forwarded_to_origin {
-    cookies_config {
-      cookie_behavior = "none"
-    }
-    headers_config {
-      header_behavior = "none"
-    }
-    query_strings_config {
-      query_string_behavior = "none"
-    }
-  }
+  // We're using the "Caching Disabled" policy for this service
+  // This service won't get much traffic, and all requests are serverd from an S3 bucket, so there's little point in caching the responses
+  name = "Managed-CachingDisabled"
 }
 
 resource "aws_cloudfront_distribution" "distribution_for_s3_bucket" {
@@ -47,7 +40,7 @@ resource "aws_cloudfront_distribution" "distribution_for_s3_bucket" {
   is_ipv6_enabled = true
 
   default_cache_behavior {
-    cache_policy_id = aws_cloudfront_cache_policy.cloudfront_cache_policy_for_s3_bucket.id
+    cache_policy_id = data.aws_cloudfront_cache_policy.cloudfront_cache_policy__managed_caching_disabled.id
     allowed_methods = ["GET", "HEAD"]
     cached_methods = ["GET", "HEAD"]
     target_origin_id = "${var.service_name_hyphens}--${var.environment_hyphens}--S3-origin"

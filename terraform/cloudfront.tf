@@ -25,7 +25,7 @@ resource "aws_cloudfront_distribution" "distribution_for_s3_bucket" {
 
   price_class = "PriceClass_100"
 
-  aliases = ["${var.dns_record_subdomain_including_dot}${data.aws_route53_zone.cred_dot_independent_commission_dot_uk_zone.name}"]
+  aliases = ["${var.dns_record_subdomain_including_dot}${data.aws_route53_zone.route_53_zone_for_our_domain.name}"]
 
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate_validation.certificate_validation_waiter.certificate_arn

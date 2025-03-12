@@ -1,13 +1,13 @@
 
-data "aws_route53_zone" "cred_dot_independent_commission_dot_uk_zone" {
+data "aws_route53_zone" "route_53_zone_for_our_domain" {
   name = "cred.independent-commission.uk."
 }
 
 resource "aws_route53_record" "dns_alias_record" {
   count = var.create_dns_record ? 1 : 0  // Only create this DNS record if "var.create_dns_record" is true
 
-  zone_id = data.aws_route53_zone.cred_dot_independent_commission_dot_uk_zone.zone_id
-  name    = "${var.dns_record_subdomain_including_dot}${data.aws_route53_zone.cred_dot_independent_commission_dot_uk_zone.name}"
+  zone_id = data.aws_route53_zone.route_53_zone_for_our_domain.zone_id
+  name    = "${var.dns_record_subdomain_including_dot}${data.aws_route53_zone.route_53_zone_for_our_domain.name}"
   type    = "A"
 
   alias {
